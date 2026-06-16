@@ -1,0 +1,63 @@
+Write a program to check whether a given number is an Automorphic number or not.
+
+A number is called an Automorphic number if the square of the number ends with the same digits as the number itself.
+
+For example:
+
+5² = 25 → ends with 5 ✅ → Automorphic Number
+
+6² = 36 → ends with 6 ✅ → Automorphic Number
+
+25² = 625 → ends with 25 ✅ → Automorphic Number
+
+7² = 49 → does not end with 7 ❌ → Not Automorphic
+
+Input Format
+
+A single integer n
+
+Constraints
+
+n >= -100000
+
+Output Format
+
+If the number is an Automorphic number, print Automorphic Number or Not an Automorphic Number
+
+---------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int square = n * n;        // Step 1: find the square of the number
+    int temp = n;              // Step 2: copy n to count digits
+    int digits = 0;
+
+    // Step 3: count how many digits are in n
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    // Step 4: extract the last 'digits' digits of square
+    int divisor = 1;
+    for (int i = 0; i < digits; i++) {
+        divisor *= 10;
+    }
+
+    int last_digits = square % divisor;
+
+    // Step 5: compare last digits with original number
+    if (last_digits == n)
+        printf("Automorphic Number");   // Automorphic
+    else
+        printf("Not an Automorphic Number");    // Not Automorphic
+
+    return 0;
+}
