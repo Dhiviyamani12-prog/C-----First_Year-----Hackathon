@@ -1,0 +1,47 @@
+Write a program to reverse the digits of a number using loops.
+
+Input Format
+
+A single integer N
+
+Constraints
+
+0 ≤ N ≤ 10⁹
+
+Output Format
+
+Print the reversed number.
+
+Sample Input 0
+
+1234
+Sample Output 0
+
+4321
+Sample Input 1
+
+1200
+Sample Output 1
+
+21
+
+-------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n, rev = 0;
+    scanf("%d", &n);
+
+    while (n > 0) {
+        int digit = n % 10;       // get the last digit
+        rev = rev * 10 + digit;   // build reversed number
+        n = n / 10;               // remove last digit
+    }
+
+    printf("%d\n", rev);          // print reversed number
+    return 0;
+}
+
