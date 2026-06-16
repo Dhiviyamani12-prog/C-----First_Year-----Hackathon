@@ -1,0 +1,32 @@
+Write a program to count the number of digits in a given integer.
+
+Input Format
+
+A single integer N
+
+Constraints
+
+0 ≤ N ≤ 10⁹
+
+Output Format
+
+Print the number of digits.
+
+--------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n,count;
+    scanf("%d",&n);
+    while(n>0){
+        count++;
+        n/=10;
+               
+    }  
+    printf("%d",count)  ;
+    return 0;
+}
