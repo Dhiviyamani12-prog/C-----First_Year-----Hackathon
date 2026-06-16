@@ -1,0 +1,60 @@
+An Abundant Number (also called an excessive number) is a number for which the sum of its proper divisors is greater than the number itself.
+
+Proper divisors of a number are all positive divisors excluding the number itself.
+
+For example:
+
+12 → Proper divisors: 1, 2, 3, 4, 6 → Sum = 16 → 16 > 12 → Abundant Number
+
+10 → Proper divisors: 1, 2, 5 → Sum = 8 → 8 < 10 → Not Abundant
+
+Write a program to check whether a given number is an abundant number or not.
+
+Input Format
+
+A single positive integer N.
+
+Constraints
+
+1 ≤ N ≤ 10⁶
+
+Output Format
+
+Print "Abundant Number" if the number is abundant, otherwise print "Not an Abundant Number".
+
+Sample Input 0
+
+12
+Sample Output 0
+
+Abundant Number
+Sample Input 1
+
+10
+Sample Output 1
+
+Not an Abundant Number
+
+---------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+   int n, sum=0;
+    scanf("%d", &n);
+
+
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {   // check if i divides n
+            sum+=i;
+        }
+    }
+    if(sum>n)
+       printf("Abundant Number");
+    else
+       printf("Not an Abundant Number");
+}
+
