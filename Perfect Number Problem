@@ -1,0 +1,58 @@
+Write a program to check whether a given number n is a Perfect Number or not.
+
+A Perfect Number is a number that is equal to the sum of all its proper divisors (factors excluding the number itself).
+
+For example:
+
+Factors of 6 are 1, 2, 3, 6
+
+Proper divisors (excluding 6) = 1 + 2 + 3 = 6 ✅ Since the sum equals the number, 6 is a Perfect Number.
+
+Input Format
+
+A single integer n representing the number.
+
+Constraints
+
+1 ≤ n ≤ 10^6
+
+Output Format
+
+Perfect Number → if the number is perfect Not a Perfect Number → otherwise
+
+Sample Input 0
+
+6
+Sample Output 0
+
+Perfect Number
+Sample Input 1
+
+10
+Sample Output 1
+
+Not a Perfect Number
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n,sum=0;
+    scanf("%d",&n)  ;
+    for(int i=1;i<n;i++){
+        if(n%i==0){
+            sum+=i;
+        }
+    }
+    if(sum==n){
+        printf("Perfect Number");
+    }
+    else {
+        printf("Not a Perfect Number");
+    }
+    return 0;
+}
