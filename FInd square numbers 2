@@ -1,0 +1,49 @@
+Given two numbers a and b both < 200 we have to find the square numbers which lie
+between a and b(inclusive)
+
+Input Format
+
+Give a and b as integer
+
+Constraints
+
+a and b should be <200
+
+Output Format
+
+print all square values b/w a & b
+
+Sample Input 0
+
+25
+100
+Sample Output 0
+
+25 36 49 64 81 100 
+Sample Input 1
+
+98
+200
+Sample Output 1
+
+100 121 144 169 196 
+
+-------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int start, end;
+    scanf("%d %d", &start, &end);
+
+    for (int i = start; i <= end; i++) {
+        int root = (int) sqrt(i);
+        if (root * root == i) {
+            printf("%d ", i);  // print only perfect squares
+        }
+    }
+    return 0;
+}
