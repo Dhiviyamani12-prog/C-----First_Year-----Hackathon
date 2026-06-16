@@ -1,0 +1,59 @@
+A Strong Number is a number whose sum of the factorial of its digits is equal to the number itself.
+
+For example:
+
+145 → 1! + 4! + 5! = 1 + 24 + 120 = 145 → Strong Number
+
+123 → 1! + 2! + 3! = 1 + 2 + 6 = 9 → Not a Strong Number
+
+Write a program to check whether a given number is a Strong Number or not.
+
+Input Format
+
+A single positive integer N.
+
+Constraints
+
+Print "Strong Number" if the number is a strong number, otherwise print "Not a Strong Number".
+
+Output Format
+
+1 ≤ N ≤ 10⁶
+
+Sample Input 0
+
+144
+Sample Output 0
+
+Not a Strong Number
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+    int fun(int n){
+    int fact=1;
+    for(int i=2;i<=n;i++)
+        fact=fact*i;
+    return fact;
+    }
+    
+int main()
+{
+   int n,ans=0;
+   scanf("%d",&n);
+   int t=n;
+   while(t){
+    ans += fun(t%10);
+    t=t/10;
+  }
+   if(n==ans)
+     printf("Strong Number");
+   else
+     printf("Not a Strong Number");
+
+   return 0;
+}
+
